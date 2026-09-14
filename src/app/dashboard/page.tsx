@@ -102,13 +102,13 @@ export default function DashboardPage() {
     <div className="section-padding">
       <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
         {/* Welcome Header */}
-        <div className="card-panel" style={styles.welcomeCard}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="card-panel welcome-card-responsive" style={styles.welcomeCard}>
+          <div className="welcome-user-info" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
             <div className="avatar" style={{ width: 64, height: 64, fontSize: '1.6rem', background: 'var(--primary-blue)' }}>
               {user.name.charAt(0).toUpperCase()}
             </div>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4, flexWrap: 'wrap' }}>
                 <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-primary)' }}>
                   Welcome back, {user.name.split(' ')[0]}!
                 </h1>
@@ -122,7 +122,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div style={styles.completionBox}>
+          <div className="completion-box-responsive" style={styles.completionBox}>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 600, marginBottom: 8 }}>
               <span style={{ color: 'var(--text-primary)' }}>Profile Strength</span>
               <span style={{ color: 'var(--primary-blue)' }}>{completionPercent}%</span>
@@ -174,7 +174,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Main Dashboard Layout */}
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 28 }}>
+        <div className="responsive-split-grid">
           {/* Left Column: Jobs & Events */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             {/* Jobs */}

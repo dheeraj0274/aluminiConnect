@@ -268,7 +268,7 @@ input, textarea, select {
   border: 1px solid var(--card-border);
 }
 
-/* Layout Utilities */
+/* Layout Utilities & Mobile Responsiveness */
 .container {
   max-width: 1240px;
   margin: 0 auto;
@@ -297,14 +297,88 @@ input, textarea, select {
   gap: 24px;
 }
 
+.responsive-split-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+}
+
+.mobile-stack-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.hero-container-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 900px) {
+  .responsive-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .mobile-stack-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .hero-container-split {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .container {
+    padding: 0 16px !important;
+  }
+
+  .section-padding {
+    padding: 40px 0 !important;
+  }
+
+  /* Make headings scale gracefully on mobile screens */
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  h3 { font-size: 1.15rem !important; }
+
+  /* Mobile Stack Flex */
+  .mobile-stack-flex {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .welcome-card-responsive {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+  }
+
+  .welcome-user-info {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .completion-box-responsive {
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 640px) {
-  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  .section-padding { padding: 48px 0; }
+  .grid-4, .grid-3, .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
 }
 
 /* Avatar */

@@ -52,7 +52,7 @@ export default function HomePage() {
     <div style={{ background: 'var(--bg-primary)' }}>
       {/* SECTION 1: LARGE HERO (650-750px tall on desktop) */}
       <section style={styles.heroSection}>
-        <div className="container" style={styles.heroContainer}>
+        <div className="container hero-container-split">
           <div style={styles.heroTextContent}>
             <div style={styles.heroBadge}>
               🏛️ Official Institutional Alumni Network
@@ -79,37 +79,36 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Hero UI Preview Mockup */}
+          {/* Hero Right Preview UI */}
           <div style={styles.heroPreviewWindow}>
             <div style={styles.windowHeader}>
               <span style={{ ...styles.dot, background: '#EF4444' }} />
               <span style={{ ...styles.dot, background: '#F59E0B' }} />
               <span style={{ ...styles.dot, background: '#10B981' }} />
-              <span style={styles.windowTitle}>AlumniConnect Directory & Portal Preview</span>
+              <span style={styles.windowTitle}>AlumniConnect Verified Portal</span>
             </div>
             <div style={styles.windowBody}>
-              <div style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
-                <input className="form-input" placeholder="🔍 Search alumni by company, title, skill, or location..." disabled style={{ background: '#f8fafc', fontSize: '0.82rem' }} />
-                <button className="btn btn-primary btn-sm" disabled>Filter</button>
+              <div className="card-panel" style={{ padding: 16, marginBottom: 16 }}>
+                <input className="form-input" placeholder="🔍 Search alumni by company, title, skill, or location..." disabled style={{ background: 'var(--bg-muted)', fontSize: '0.82rem' }} />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                <div className="card-panel" style={{ padding: 12, display: 'flex', gap: 10, alignItems: 'center' }}>
-                  <div className="avatar" style={{ width: 40, height: 40, fontSize: '0.9rem' }}>RS</div>
-                  <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-primary)' }}>Rahul Sharma</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--primary-blue)', fontWeight: 600 }}>Senior Software Engineer @ Google</div>
-                    <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>Computer Science &apos;21 • Bengaluru</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div className="card-panel" style={{ padding: 12, display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div className="avatar" style={{ width: 40, height: 40, fontSize: '0.9rem', background: 'var(--primary-blue)' }}>PA</div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontWeight: 700, fontSize: '0.88rem', color: 'var(--text-primary)' }}>Priya Ananth</div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>Senior Product Manager @ Microsoft</div>
                   </div>
+                  <span className="badge badge-success">Available Mentor</span>
                 </div>
 
-                <div className="card-panel" style={{ padding: 12, display: 'flex', gap: 10, alignItems: 'center' }}>
+                <div className="card-panel" style={{ padding: 12, display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div className="avatar" style={{ width: 40, height: 40, fontSize: '0.9rem', background: '#10B981' }}>PP</div>
-                  <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-primary)' }}>Priya Patel</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--primary-blue)', fontWeight: 600 }}>Staff Product Manager @ Meta</div>
-                    <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>Information Tech &apos;20 • San Francisco</div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontWeight: 700, fontSize: '0.88rem', color: 'var(--text-primary)' }}>Pankaj Patel</div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>Staff Cloud Architect @ Amazon Web Services</div>
                   </div>
+                  <span className="badge badge-primary">Class of &apos;18</span>
                 </div>
               </div>
             </div>
@@ -117,47 +116,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 2: ALUMNI STATISTICS BAR */}
+      {/* SECTION 2: STATS BAR */}
       <section style={styles.statsBarSection}>
         <div className="container">
-          <div className="grid-4" style={{ textAlign: 'center' }}>
-            <div className="card-panel" style={styles.statBox}>
+          <div className="card-panel grid-4" style={{ padding: '12px 24px' }}>
+            <div style={styles.statBox}>
               <div style={styles.statNum}>{stats.totalAlumni.toLocaleString()}+</div>
               <div style={styles.statLbl}>Registered Alumni</div>
             </div>
-            <div className="card-panel" style={styles.statBox}>
+            <div style={styles.statBox}>
               <div style={styles.statNum}>{stats.totalCompanies.toLocaleString()}+</div>
               <div style={styles.statLbl}>Global Employers</div>
             </div>
-            <div className="card-panel" style={styles.statBox}>
+            <div style={styles.statBox}>
               <div style={styles.statNum}>{stats.totalJobs.toLocaleString()}+</div>
-              <div style={styles.statLbl}>Active Job Openings</div>
+              <div style={styles.statLbl}>Exclusive Postings</div>
             </div>
-            <div className="card-panel" style={styles.statBox}>
+            <div style={styles.statBox}>
               <div style={styles.statNum}>{stats.totalEvents.toLocaleString()}+</div>
-              <div style={styles.statLbl}>Annual Events & Summit</div>
+              <div style={styles.statLbl}>Annual Events</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: ALUMNI NETWORK INTRODUCTION */}
+      {/* SECTION 3: CORE VALUE PROPOSITION */}
       <section className="section-padding">
         <div className="container">
           <div style={styles.sectionHeader}>
-            <span style={styles.sectionTag}>INSTITUTIONAL NETWORK</span>
-            <h2 style={styles.sectionTitle}>Built for Lifelong Professional Excellence</h2>
-            <p style={styles.sectionSubtitle}>
-              Our alumni network brings together graduates across technology, business, hardware, research, and finance to foster mentorship and mutual growth.
+            <span style={styles.sectionTag}>PORTAL CAPABILITIES</span>
+            <h2 style={styles.sectionTitle}>
+              Designed for Lifetime Professional Connection
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem' }}>
+              Everything you need to find mentors, post career openings, network with batchmates, and advance institutional leadership.
             </p>
           </div>
 
           <div className="grid-3">
             <div className="card-panel" style={styles.introCard}>
-              <div style={styles.introIcon}>🏛️</div>
-              <h3 style={styles.introTitle}>Verified Directory</h3>
+              <div style={styles.introIcon}>🔍</div>
+              <h3 style={styles.introTitle}>Global Alumni Directory</h3>
               <p style={styles.introDesc}>
-                Access a verified directory of graduates organized by department, graduation year, location, and corporate organization.
+                Filter verified graduates by company, job title, department, graduation year, and skill sets with direct messaging capabilities.
               </p>
             </div>
 
@@ -165,7 +166,7 @@ export default function HomePage() {
               <div style={styles.introIcon}>🤝</div>
               <h3 style={styles.introTitle}>Structured Mentorship</h3>
               <p style={styles.introDesc}>
-                Connect junior students with senior alumni for 1-on-1 career guidance, resume reviews, and technical mock interviews.
+                Connect senior alumni with undergraduates for 1-on-1 career guidance, resume reviews, and interview preparation.
               </p>
             </div>
 
@@ -197,7 +198,7 @@ export default function HomePage() {
 
           {/* Search/Filter UI Preview */}
           <div className="card-panel" style={{ padding: 16, marginBottom: 24, background: 'var(--bg-muted)' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 12 }}>
+            <div className="mobile-stack-grid">
               <input className="form-input" placeholder="Search by name, company, skill..." disabled value="" readOnly />
               <select className="form-select" disabled><option>Computer Science</option></select>
               <select className="form-select" disabled><option>Batch of 2021</option></select>

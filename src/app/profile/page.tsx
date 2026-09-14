@@ -123,7 +123,7 @@ export default function ProfilePage() {
         </div>
 
         {/* Profile Content Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 24 }}>
+        <div className="responsive-split-grid">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             {/* About / Bio */}
             <div className="card-panel" style={{ padding: 24 }}>
